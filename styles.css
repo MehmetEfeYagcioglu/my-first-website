@@ -1,0 +1,951 @@
+/* Basic Reset & Body Styles */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f8fafc; /* light gray/off-white */
+    color: #1e293b; /* dark slate */
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Container for consistent spacing */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation Bar Styling */
+nav {
+    background-color: #ffffff;
+    padding: 15px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: flex; /* Use Flexbox */
+    justify-content: space-between; /* Space out logo and links */
+    align-items: center; /* Vertically align items */
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.logo a {
+    font-size: 24px;
+    font-weight: 700;
+    color: #4f46e5; /* indigo-600 */
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Use Flexbox for links */
+    gap: 20px; /* Space between links */
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #475569; /* slate-600 */
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #6366f1; /* indigo-500 */
+    background-color: #eef2ff; /* indigo-50 */
+}
+
+/* Hero Section Styling */
+.hero-section {
+    background: linear-gradient(to bottom right, #e0e7ff, #f3e8ff); /* light gradient from indigo to purple */
+    padding: 80px 20px;
+    display: flex; /* Use Flexbox for two-column layout */
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Center horizontally if content doesn't fill */
+    gap: 40px; /* Space between content and image */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    text-align: center; /* Default text align for mobile */
+    border-radius: 15px; /* Rounded corners for the section */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08); /* Soft shadow */
+    margin: 30px 20px; /* Margin around the hero section */
+}
+
+.hero-content {
+    flex: 1; /* Allows content to grow */
+    min-width: 300px; /* Minimum width before wrapping */
+    max-width: 600px; /* Max width for content column */
+    text-align: left; /* Text aligns left on larger screens */
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 800;
+    color: #312e81; /* dark indigo */
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: #475569; /* slate-600 */
+    margin-bottom: 30px;
+}
+
+.hero-content strong {
+    color: #6366f1; /* indigo-500 */
+}
+
+.call-to-action {
+    background: linear-gradient(to right, #6366f1, #8b5cf6); /* indigo to purple gradient */
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px; /* Pill shape */
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3); /* Shadow for button */
+}
+
+.call-to-action:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+}
+
+.hero-image {
+    flex: 1; /* Allows image to grow */
+    min-width: 300px; /* Minimum width before wrapping */
+    max-width: 600px; /* Max width for image column */
+    display: flex;
+    justify-content: center; /* Center image within its column */
+    align-items: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Rounded corners for image */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Soft shadow for image */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column; /* Stack content and image vertically */
+        text-align: center; /* Center text on smaller screens */
+        padding: 60px 20px;
+    }
+
+    .hero-content {
+        text-align: center; /* Center text for mobile */
+        max-width: 100%;
+        margin-bottom: 40px; /* Space between text and image */
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .nav-links {
+        flex-direction: column; /* Stack nav links on smaller screens */
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    nav {
+        flex-direction: column; /* Stack logo and nav links */
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 30px;
+    }
+    .hero-content p {
+        font-size: 14px;
+    }
+    .cta-button {
+        font-size: 16px;
+        padding: 12px 25px;
+    }
+}
+
+/* About Us Section Styling */
+.about-us {
+    padding: 80px 20px;
+    background-color: #ffffff; /* White background */
+    margin: 30px 20px; /* Consistent margin with hero section */
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08); /* Soft shadow */
+}
+
+.about-us-content {
+    display: flex; /* Use Flexbox */
+    align-items: center; /* Vertically center items */
+    gap: 60px; /* Space between image and text */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center; /* Center items when wrapped */
+    max-width: 1000px; /* Max width for content */
+    margin: 0 auto; /* Center the container */
+}
+
+.circular-image {
+    flex-shrink: 0; /* Prevent image from shrinking */
+    width: 300px; /* Fixed width for the circular container */
+    height: 300px; /* Fixed height for the circular container */
+    border-radius: 50%; /* Make it circular */
+    overflow: hidden; /* Hide parts of the image outside the circle */
+    border: 8px solid #6366f1; /* Indigo border */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Shadow for the image */
+    display: flex; /* Center image inside */
+    justify-content: center;
+    align-items: center;
+}
+
+.circular-image img {
+    width: 100%; /* Image fills the circular container */
+    height: 100%; /* Image fills the circular container */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    display: block; /* Remove extra space below image */
+}
+
+.about-text {
+    flex: 1; /* Allows text content to grow and take available space */
+    min-width: 300px; /* Minimum width before wrapping */
+    max-width: 600px; /* Max width for text column */
+    text-align: left; /* Align text left */
+}
+
+.about-text h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #312e81; /* dark indigo */
+    margin-bottom: 25px;
+    line-height: 1.3;
+}
+
+.about-text p {
+    font-size: 17px;
+    color: #475569; /* slate-600 */
+    margin-bottom: 15px;
+}
+
+/* Responsive Adjustments for About Us */
+@media (max-width: 768px) {
+    .about-us-content {
+        flex-direction: column; /* Stack image and text vertically */
+        text-align: center; /* Center text on smaller screens */
+        gap: 40px;
+    }
+
+    .circular-image {
+        width: 250px; /* Slightly smaller circle on mobile */
+        height: 250px;
+        margin-bottom: 20px; /* Add space below image when stacked */
+    }
+
+    .about-text {
+        text-align: center; /* Center text for mobile */
+        max-width: 100%; /* Allow text to take full width */
+    }
+
+    .about-text h2 {
+        font-size: 30px;
+    }
+
+    .about-text p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .circular-image {
+        width: 200px; /* Even smaller circle on very small screens */
+        height: 200px;
+    }
+}
+
+
+/* Features Section Styling */
+.features {
+    padding: 80px 20px;
+    background-color: #f8fafc; /* Light gray background */
+    text-align: center;
+    margin: 30px 20px; /* Consistent margin */
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05); /* Soft shadow */
+}
+
+.features h2 {
+    font-size: 38px;
+    font-weight: 700;
+    color: #312e81; /* Dark indigo */
+    margin-bottom: 20px;
+}
+
+.features-paragraph {
+    font-size: 18px;
+    color: #475569; /* Slate-600 */
+    max-width: 800px;
+    margin: 0 auto 50px auto; /* Center paragraph and add margin below */
+}
+
+.grid-container {
+    display: flex; /* Use Flexbox for columns */
+    flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
+    justify-content: center; /* Center columns when wrapped */
+    gap: 30px; /* Space between columns */
+}
+
+.feature-column {
+    flex: 1; /* Allows columns to grow and shrink */
+    min-width: 280px; /* Minimum width before wrapping */
+    max-width: 380px; /* Max width for each column */
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* Soft shadow for columns */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Flex container for content within column */
+    flex-direction: column; /* Stack image, title, text */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text within column */
+}
+
+.feature-column:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.feature-column img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Rounded corners for images */
+    margin-bottom: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.feature-column h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #312e81; /* Dark indigo */
+    margin-bottom: 15px;
+}
+
+.feature-column p {
+    font-size: 16px;
+    color: #475569; /* Slate-600 */
+}
+
+/* Responsive Adjustments for Features Section */
+@media (max-width: 768px) {
+    .features h2 {
+        font-size: 32px;
+    }
+
+    .features-paragraph {
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+
+    .feature-column {
+        padding: 25px;
+        min-width: 250px; /* Allow columns to get slightly smaller */
+    }
+
+    .feature-column h3 {
+        font-size: 22px;
+    }
+
+    .feature-column p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .features h2 {
+        font-size: 28px;
+    }
+}
+
+.alt-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 80px 20px;
+    background-color: #ffffff;
+    margin: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    flex-wrap: wrap;
+}
+
+.alt-section img {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+    background-color: #e2e8f0; /* slate-200 placeholder */
+    object-fit: cover;
+}
+
+.alt-section .text {
+    max-width: 500px;
+    min-width: 280px;
+}
+
+.alt-section .text h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #312e81; /* dark indigo */
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.alt-section .text p {
+    font-size: 17px;
+    color: #475569; /* slate-600 */
+    margin-bottom: 15px;
+}
+
+/* Reverse layout for alternating */
+.alt-section.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .alt-section,
+    .alt-section.reverse {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 20px;
+    }
+    .alt-section .text {
+        max-width: 100%;
+    }
+    .alt-section .text h2 {
+        font-size: 28px;
+    }
+    .alt-section .text p {
+        font-size: 15px;
+    }
+}
+
+    .team-section {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .team-section h2 {
+      font-size: 2.5em;
+      margin-bottom: 5px;
+    }
+
+    .team-section h3 {
+      font-size: 1.5em;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .profile-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .profile {
+      text-align: center;
+    }
+
+    .profile img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      background-color: #ccc;
+    }
+
+    .profile-title {
+      font-weight: bold;
+      margin-top: 8px;
+    }
+
+    .profile-subtitle {
+      color: #555;
+      font-size: 0.9em;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .profile img {
+        width: 90px;
+        height: 90px;
+      }
+    }
+
+    /* Pricing / Package Section Styling */
+.pricing-section {
+    padding: 80px 20px;
+    background-color: #f8fafc; /* light gray/off-white */
+    text-align: center;
+    margin: 30px 20px; /* Consistent margin */
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05); /* Soft shadow */
+}
+
+.pricing-section h2 {
+    font-size: 38px;
+    font-weight: 700;
+    color: #312e81; /* Dark indigo */
+    margin-bottom: 15px;
+}
+
+.pricing-subtitle {
+    font-size: 18px;
+    color: #475569; /* Slate-600 */
+    max-width: 700px;
+    margin: 0 auto 60px auto; /* Center subtitle and add margin below */
+}
+
+.pricing-grid-container {
+    display: flex; /* Use Flexbox for columns */
+    flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
+    justify-content: center; /* Center columns when wrapped */
+    gap: 30px; /* Space between columns */
+}
+
+.pricing-card {
+    flex: 1; /* Allows cards to grow and shrink */
+    min-width: 280px; /* Minimum width before wrapping */
+    max-width: 350px; /* Max width for each card */
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1); /* Stronger shadow for cards */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-top: 8px solid #a78bfa; /* Default top border color */
+}
+
+.pricing-card.highlighted {
+    transform: scale(1.05); /* Slightly larger for highlighted card */
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2); /* Highlighted shadow */
+    border-color: #6366f1; /* Stronger border color for highlight */
+    background-color: #eef2ff; /* Lighter background for highlight */
+}
+
+.pricing-card:hover:not(.highlighted) {
+    transform: translateY(-5px); /* Lift effect on hover for non-highlighted */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.pricing-card h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #312e81; /* Dark indigo */
+    margin-bottom: 10px;
+}
+
+.pricing-card .card-subtitle {
+    font-size: 16px;
+    color: #64748b; /* Slate-500 */
+    margin-bottom: 30px;
+}
+
+.pricing-card .feature-list-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #312e81; /* Dark indigo */
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.pricing-card .features-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+    text-align: center; /* Center list items */
+}
+
+.pricing-card .features-list li {
+    font-size: 16px;
+    color: #475569; /* Slate-600 */
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px; /* Space for custom bullet */
+}
+
+.pricing-card .features-list li:before {
+    content: '✓'; /* Checkmark bullet */
+    color: #34d399; /* Green checkmark */
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.pricing-button {
+    background: linear-gradient(to right, #6366f1, #8b5cf6); /* indigo to purple gradient */
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 50px; /* Pill shape */
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3); /* Shadow for button */
+    margin-top: auto; /* Push button to the bottom if content height varies */
+}
+
+.pricing-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+}
+
+/* Responsive Adjustments for Pricing Section */
+@media (max-width: 992px) {
+    .pricing-card.highlighted {
+        transform: scale(1.02); /* Slightly less aggressive scale on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .pricing-section h2 {
+        font-size: 32px;
+    }
+
+    .pricing-subtitle {
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+
+    .pricing-card {
+        padding: 30px 25px;
+        min-width: 250px;
+    }
+
+    .pricing-card h3 {
+        font-size: 24px;
+    }
+
+    .pricing-card .card-subtitle {
+        font-size: 14px;
+    }
+
+    .pricing-button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+    .pricing-card.highlighted {
+        transform: scale(1); /* No scale on very small screens, just shadow */
+    }
+}
+
+@media (max-width: 480px) {
+    .pricing-section h2 {
+        font-size: 28px;
+    }
+}
+
+/* FAQ Section Styling */
+.faq-section {
+    padding: 80px 20px;
+    background-color: #f0f4f8; /* Light gray background */
+    text-align: center;
+    margin: 30px 20px; /* Consistent margin */
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05); /* Soft shadow */
+}
+
+.faq-main-title {
+    font-size: 38px;
+    font-weight: 700;
+    color: #312e81; /* Dark indigo */
+    margin-bottom: 15px;
+}
+
+.faq-subtitle {
+    font-size: 18px;
+    color: #475569; /* Slate-600 */
+    max-width: 700px;
+    margin: 0 auto 60px auto; /* Center subtitle and add margin below */
+}
+
+.accordion-container {
+    max-width: 800px; /* Max width for accordion items */
+    margin: 0 auto;
+    text-align: left; /* Align text left within items */
+}
+
+.accordion-item {
+    background-color: #ffffff;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* Soft shadow */
+    overflow: hidden; /* Hide overflow when content collapses */
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0; /* Subtle border */
+}
+
+.accordion-item.active {
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.2); /* Highlight active item */
+    border-color: #6366f1; /* Highlight border */
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 25px 30px;
+    background-color: #ffffff;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 0.3s ease;
+    border-radius: 12px; /* Ensure header has rounded corners */
+}
+
+.accordion-item.active .accordion-header {
+    background-color: #eef2ff; /* Light indigo background for active header */
+}
+
+.accordion-header h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #312e81; /* Dark indigo */
+    margin: 0;
+    flex-grow: 1; /* Allow title to take space */
+}
+
+.accordion-icon {
+    font-size: 20px;
+    color: #6366f1; /* Indigo color for icon */
+    margin-left: 20px;
+    transition: transform 0.3s ease;
+}
+
+.accordion-item.active .accordion-icon {
+    transform: rotate(180deg); /* Rotate arrow when active */
+}
+
+.accordion-content {
+    max-height: 0; /* Initially hidden */
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    padding: 0 30px; /* Horizontal padding, vertical will be added when open */
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 200px; /* Example max-height, adjust as needed */
+    padding-bottom: 25px; /* Add bottom padding when open */
+    padding-top: 10px; /* Add top padding when open */
+}
+
+.accordion-content p {
+    font-size: 16px;
+    color: #475569; /* Slate-600 */
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Responsive Adjustments for FAQ Section */
+@media (max-width: 768px) {
+    .faq-main-title {
+        font-size: 32px;
+    }
+
+    .faq-subtitle {
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+
+    .accordion-header {
+        padding: 20px 25px;
+    }
+
+    .accordion-header h3 {
+        font-size: 18px;
+    }
+
+    .accordion-content {
+        padding: 0 25px;
+    }
+    .accordion-item.active .accordion-content {
+        padding-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .faq-main-title {
+        font-size: 28px;
+    }
+
+    .accordion-header h3 {
+        font-size: 16px;
+    }
+
+    .accordion-icon {
+        font-size: 18px;
+    }
+
+    .accordion-content p {
+        font-size: 14px;
+    }
+}
+
+/* Contact Us Section Styling */
+.contact-section {
+    padding: 80px 20px;
+    background-color: #eef2ff; /* Very light indigo background */
+    text-align: center;
+    margin: 30px 20px; /* Consistent margin */
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05); /* Soft shadow */
+}
+
+.contact-content {
+    display: flex; /* Use Flexbox for two-column layout */
+    align-items: flex-start; /* Align items to the top */
+    gap: 60px; /* Space between info and map */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center; /* Center items when wrapped */
+    max-width: 1000px; /* Max width for content */
+    margin: 0 auto; /* Center the container */
+}
+
+.contact-info {
+    flex: 1; /* Allows info to grow */
+    min-width: 300px; /* Minimum width before wrapping */
+    max-width: 500px; /* Max width for info column */
+    text-align: left; /* Align text left */
+}
+
+.contact-info h2 {
+    font-size: 38px;
+    font-weight: 700;
+    color: #312e81; /* Dark indigo */
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.contact-info .contact-subtitle {
+    font-size: 18px;
+    color: #475569; /* Slate-600 */
+    margin-bottom: 30px;
+}
+
+.contact-info .contact-details h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #312e81; /* Dark indigo */
+    margin-bottom: 15px;
+    margin-top: 30px;
+}
+
+.contact-info .contact-details p {
+    font-size: 17px;
+    color: #475569; /* Slate-600 */
+    margin-bottom: 10px;
+}
+
+.contact-info .contact-details p strong {
+    color: #1e293b; /* Darker text for emphasis */
+}
+
+.contact-map {
+    flex-shrink: 0; /* Prevent map from shrinking */
+    width: 45%; /* Map takes about half the width */
+    max-width: 600px; /* Max width for map */
+    min-width: 300px; /* Minimum width for map */
+    height: 400px; /* Fixed height for the map container */
+    background-color: #dbeafe; /* Placeholder background */
+    border-radius: 10px;
+    overflow: hidden; /* Ensure image/iframe stays within bounds */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1); /* Soft shadow */
+    display: flex; /* Center placeholder image */
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-map img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the area */
+    display: block;
+}
+
+/* Responsive Adjustments for Contact Section */
+@media (max-width: 992px) {
+    .contact-content {
+        gap: 40px; /* Reduce gap on medium screens */
+    }
+
+    .contact-map {
+        width: 40%; /* Adjust map width slightly */
+        height: 350px; /* Adjust height */
+    }
+
+    .contact-info h2 {
+        font-size: 34px;
+    }
+    .contact-info .contact-subtitle,
+    .contact-info .contact-details p {
+        font-size: 16px;
+    }
+    .contact-info .contact-details h3 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column; /* Stack info and map vertically */
+        text-align: center; /* Center text on smaller screens */
+        gap: 30px;
+    }
+
+    .contact-info {
+        text-align: center; /* Center text for mobile */
+        max-width: 100%; /* Text takes full width */
+    }
+
+    .contact-info .contact-details {
+        text-align: center; /* Center details for mobile */
+    }
+
+    .contact-map {
+        width: 100%; /* Map takes full width on mobile */
+        height: 300px; /* Adjust height for mobile */
+    }
+
+    .contact-info h2 {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-info h2 {
+        font-size: 28px;
+    }
+}
+
